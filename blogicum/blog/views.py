@@ -35,7 +35,8 @@ def category_posts(request, category_slug):
     category = get_object_or_404(
         Category,
         slug=category_slug,
-        is_published=True)
+        is_published=True
+    )
     post_list = filter_posts(category.posts)
     context = {"category": category, "post_list": post_list}
     return render(request, template, context)

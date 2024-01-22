@@ -4,6 +4,7 @@ from django.contrib.auth import get_user_model
 from core.models import PublishedAndCreatedModel
 from blog.constants import MAX_LENGTH_CHARFIELD
 
+
 User = get_user_model()
 
 
@@ -70,7 +71,7 @@ class Post(PublishedAndCreatedModel):
     class Meta:
         verbose_name = "публикация"
         verbose_name_plural = "Публикации"
-        ordering = ["-pub_date"]
+        ordering = ("-pub_date",)
 
     def __str__(self) -> str:
         return self.title
